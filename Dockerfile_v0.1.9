@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER ngot "https://github.com/ngot"
 
 RUN sudo apt-get update 
-RUN sudo apt-get install php5-curl
+RUN sudo apt-get -y install php5-curl
 
 # Install fibjs
 RUN curl -L https://github.com/xicilion/fibjs/releases/download/v0.1.9/fibjs-linux -o fibjs
