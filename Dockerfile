@@ -10,4 +10,6 @@ cd fibjs && \
 git submodule init && \
 git submodule update && \
 sh build -j && \
-sudo sh bin/Linux_amd64_release/installer.sh
+sudo sh bin/Linux_amd64_release/installer.sh  && \
+cd ..  && \
+rm -rf fibjs
