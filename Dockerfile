@@ -5,11 +5,15 @@ MAINTAINER ngot "https://github.com/ngot"
 RUN apt-get update
 RUN apt-get install -y curl g++ make cmake git
 
-RUN git clone https://github.com/xicilion/fibjs.git && \
-cd fibjs && \
-git submodule init && \
-git submodule update && \
-sh build -j && \
-sudo sh bin/Linux_amd64_release/installer.sh  && \
-cd ..  && \
-rm -rf fibjs
+ENV FIBJS_VERSION 0.2.1
+ENV NODE_VERSION 6.9.2
+
+RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" && \
+tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 && \
+rm "node-v$NODE_VERSION-linux-x64.tar.xz" && \
+ln -s /usr/local/bin/node /usr/local/bin/nodejs
+
+# Install fibjs
+RUN curl -SL "https://github.com/xicilion/fibjs/releases/download/v$FIBJS_VERSION/fibjs-linux" -o fibjs
+RUN chmod +x fibjs
+RUN sudo mv fibjs /usr/local/bin
