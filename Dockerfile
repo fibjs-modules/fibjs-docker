@@ -10,8 +10,8 @@ ENV NODE_VERSION 6.9.2
 
 RUN curl -SLO "https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz" && \
 ls -la && \
-tar -xJf "node-v$NODE_VERSION-linux-x64.tar.xz" -C /usr/local --strip-components=1 && \
-rm "node-v$NODE_VERSION-linux-x64.tar.xz" && \
+tar -xJf "node-v6.9.2-linux-x64.tar.xz" -C /usr/local --strip-components=1 && \
+rm -f "node-v6.9.2-linux-x64.tar.xz" && \
 ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 # Install fibjs
