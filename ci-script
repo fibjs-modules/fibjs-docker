@@ -1,5 +1,5 @@
 cd /home/ci
-pwd
-ls -la
+rm -rf node_modules
 npm install
+ls -la
 npm run ci
