@@ -1,0 +1,5 @@
+cd /home/ci
+pwd
+ls -la
+npm install
+npm run ci
