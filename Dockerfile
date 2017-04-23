@@ -14,7 +14,7 @@ RUN rm -f "node-v$NODE_VERSION-linux-x64.tar.xz"
 RUN ln -s /usr/local/bin/node /usr/local/bin/nodejs
 
 # install fibjs
-RUN git clone https://github.com/xicilion/fibjs.git && \
+RUN git clone https://github.com/fibjs/fibjs.git && \
 cd fibjs && \
 git submodule init && \
 git submodule update && \
