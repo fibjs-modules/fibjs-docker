@@ -13,7 +13,7 @@ RUN rm -f /usr/bin/x86_64-linux-gnu-g++
 RUN ln -s gcc-5 /usr/bin/x86_64-linux-gnu-gcc
 RUN ln -s g++-5 /usr/bin/x86_64-linux-gnu-g++
 
-RUN git clone https://github.com/xicilion/fibjs.git && \
+RUN git clone https://github.com/fibjs/fibjs.git && \
 cd fibjs && \
 git submodule init && \
 git submodule update && \
