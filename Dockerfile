@@ -2,9 +2,19 @@ FROM ubuntu:14.04
 
 MAINTAINER ngot "https://github.com/ngot"
 
-RUN apt-get update
-RUN apt-get install curl g++ make cmake git gcc-5 g++-5 -y
-RUN apt-get install g++-multilib  libc6 libc6-dev binutils -y
+RUN sudo apt-get update
+RUN apt-get install software-properties-common -y
+RUN add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse'
+sudo add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted' && \
+sudo add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe' && \
+sudo add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates multiverse' && \
+sudo add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse' && \
+sudo add-apt-repository 'deb http://security.ubuntu.com/ubuntu xenial-security main restricted' && \
+sudo add-apt-repository 'deb http://security.ubuntu.com/ubuntu xenial-security universe' && \
+sudo add-apt-repository 'deb http://security.ubuntu.com/ubuntu xenial-security multiverse'
+
+RUN sudo apt-get update
+RUN apt-get install curl g++ make cmake git g++-multilib -y
 RUN rm -f /usr/include/asm
 RUN ln -s x86_64-linux-gnu /usr/include/i386-linux-gnu
 RUN ln -s x86_64-linux-gnu /usr/include/x86_64-linux-gnux32
