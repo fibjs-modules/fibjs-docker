@@ -5,13 +5,9 @@ MAINTAINER ngot "https://github.com/ngot"
 RUN apt-get update
 RUN apt-get install software-properties-common -y
 RUN add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial main restricted universe multiverse' && \
-add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted' && \
-add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates universe' && \
-add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates multiverse' && \
+add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-updates main restricted universe multiverse' && \
 add-apt-repository 'deb http://us.archive.ubuntu.com/ubuntu/ xenial-backports main restricted universe multiverse' && \
-add-apt-repository 'deb http://security.ubuntu.com/ubuntu xenial-security main restricted' && \
-add-apt-repository 'deb http://security.ubuntu.com/ubuntu xenial-security universe' && \
-add-apt-repository 'deb http://security.ubuntu.com/ubuntu xenial-security multiverse'
+add-apt-repository 'deb http://security.ubuntu.com/ubuntu xenial-security main restricted universe multiverse'
 
 RUN apt-get update
 RUN apt-get install curl g++ make cmake git g++-multilib -y
